@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row set">
+    <div class="col-sm-6">
+        <input type="text" class="form-control" [(ngModel)]="address" placeholder="Enter the location"/>
+    </div>
+    <div class="col-sm-6">
+        <button class="btn btn-primary" (click)="getLocation()">Go to location</button>
+    </div>
+  </div>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+  <h3>News Section</h3>
+  <div class="col-sm-12" *ngFor="let news of news">
+    <div class="row">
+      <div class="col-sm-4">
+        <p class="bold">Title</p>
+        <label>{{news.title}}</label>
+      </div>
+      <div class="col-sm-4">
+          <p>Description</p>
+          <label>{{news.description}}</label>
+      </div>
+      <div class="col-sm-4 word">
+          <p>Link</p>
+        <a href="{{news.url}}">{{news.url}}</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12" *ngIf="!news">
+    <p>
+      Please select a location to see news section and location.
+    </p>
+  </div>
+</div>

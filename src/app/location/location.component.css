@@ -1,0 +1,11 @@
+agm-map {
+  height: 300px;
+}
+.set {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.word {
+  word-wrap: break-word;
+}
